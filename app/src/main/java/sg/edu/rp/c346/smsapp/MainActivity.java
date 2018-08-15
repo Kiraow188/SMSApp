@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     smsManager.sendTextMessage(to, null, msg, null, null);
                 }
                 Toast.makeText(MainActivity.this,"Message Sent", Toast.LENGTH_LONG).show();
+                etMsg.setText("");
             }
         });
 
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 sendIntent.putExtra("address", to);
                 sendIntent.putExtra("sms_body", msg);
                 startActivity(sendIntent);
+                etMsg.setText("");
             }
         });
     }
